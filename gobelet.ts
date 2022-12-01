@@ -8,13 +8,25 @@ export default class Gobelet {
     return this._valeur;
   }
 
-  set valeur(valeur:number){
+  get des():De[]{
+    return this._des;
+  }
+
+  set valeur(valeur: number) {
     this._valeur = valeur;
   }
 
-  public lancer():number {
+  set des(des:De[]){
+    des.forEach(de=> this._des.push(de));
+  }
+
+  public lancer(): number {
     this.valeur = 0;
-    this._des.forEach(de => this.valeur += de.lancer());
+    this._des.forEach((de) => (this.valeur += de.lancer()));
     return this.valeur;
+  }
+
+  public afficherScore(): void {
+    this._des.forEach((de) => console.log(de._valeur));
   }
 }

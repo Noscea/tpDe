@@ -6,7 +6,7 @@ export default class De {
   }
 
   set valeur(valeur: number) {
-    this.valeur = valeur;
+    this._valeur = valeur;
   }
 
   public lancer(): number {
