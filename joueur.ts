@@ -26,7 +26,6 @@ export default class Joueur {
 
   public jouer(gobelet: Gobelet): void {
     gobelet.lancer();
-    this.score = gobelet.valeur;
   }
 
   public afficherScore() {

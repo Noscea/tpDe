@@ -1,21 +1,9 @@
-import De from "./de";
-import Gobelet from "./gobelet";
-import Joueur from "./joueur";
+import Partie from "./partie";
 
-const joueurUn = new Joueur("Alex");
-const joueurDeux = new Joueur("François");
+const partie = new Partie();
 
-const deUn = new De();
-const deDeux = new De();
+const nbJoueurs: number =4 ;
 
-const gobelet = new Gobelet();
-
-gobelet.des = [deUn, deDeux];
-
-
-
-
-console.log(joueurUn.jouer(gobelet));
-console.log(joueurDeux.jouer(gobelet));
-joueurUn.afficherScore();
-joueurDeux.afficherScore();
+partie.initialiserPartie(nbJoueurs);
+partie.lancerPartie();
+partie.afficherGagnant();
